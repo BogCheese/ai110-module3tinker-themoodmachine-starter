@@ -2,10 +2,15 @@
 Entry point for the Mood Machine rule based mood analyzer.
 """
 
+import sys
 from typing import List
 
 from mood_analyzer import MoodAnalyzer
 from dataset import SAMPLE_POSTS, TRUE_LABELS
+
+# Emoji in the dataset crash print() on Windows consoles that default to cp1252.
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
 
 
 def evaluate_rule_based(posts: List[str], labels: List[str]) -> float:

@@ -23,6 +23,13 @@ POSITIVE_WORDS = [
     "chill",
     "relaxed",
     "amazing",
+    "hopeful",
+    "proud",
+    "best",
+    "obsessed",
+    "😂",
+    "😊",
+    ":)",
 ]
 
 NEGATIVE_WORDS = [
@@ -36,6 +43,13 @@ NEGATIVE_WORDS = [
     "stressed",
     "hate",
     "boring",
+    "failed",
+    "died",
+    "stuck",
+    "miss",
+    "exhausted",
+    "😢",
+    ":(",
 ]
 
 # ---------------------------------------------------------------------
@@ -92,3 +106,33 @@ TRUE_LABELS = [
 #
 # Remember to keep them aligned:
 #   len(SAMPLE_POSTS) == len(TRUE_LABELS)
+
+# ---------------------------------------------------------------------
+# Additional posts (slang, emojis, sarcasm, mixed feelings)
+# ---------------------------------------------------------------------
+
+SAMPLE_POSTS.append("Lowkey stressed but kind of proud of myself")
+TRUE_LABELS.append("mixed")
+
+SAMPLE_POSTS.append("I absolutely love getting stuck in traffic")
+TRUE_LABELS.append("negative")   # sarcasm
+
+SAMPLE_POSTS.append("Got the job!! no cap best day ever 😂")
+TRUE_LABELS.append("positive")
+
+SAMPLE_POSTS.append("Failed my exam 💀")
+TRUE_LABELS.append("negative")
+
+SAMPLE_POSTS.append("Moving away for college, so excited but I'm gonna miss everyone 🥲")
+TRUE_LABELS.append("mixed")
+
+SAMPLE_POSTS.append("Whatever, it's just another Monday")
+TRUE_LABELS.append("neutral")
+
+SAMPLE_POSTS.append("Highkey obsessed with this new playlist")
+TRUE_LABELS.append("positive")
+
+SAMPLE_POSTS.append("Great, my phone died right before the big game :)")
+TRUE_LABELS.append("negative")   # sarcasm plus a smiley that doesn't match the mood
+
+assert len(SAMPLE_POSTS) == len(TRUE_LABELS), "Posts and labels are out of sync!"
